@@ -54,16 +54,18 @@ public class GameManager : MonoBehaviour {
             {
                 winnerText1.SetActive(true);
                 secondsToWait = audioHandler.GetComponent<AudioHandler>().PlayQuip(1);
+                secondsToWait = Mathf.Max(secondsToWait, 4);
             }
             else
             {
                 winnerText2.SetActive(true);
                 secondsToWait = audioHandler.GetComponent<AudioHandler>().PlayQuip(2);
+                secondsToWait = Mathf.Max(secondsToWait, 4);
             }
             player1Score = 0;
             player2Score = 0;
         }
-
+        print(secondsToWait);
         StartCoroutine(WaitAndReloadScene(secondsToWait));
     }
 
@@ -80,16 +82,19 @@ public class GameManager : MonoBehaviour {
             {
                 winnerText1.SetActive(true);
                 secondsToWait = audioHandler.GetComponent<AudioHandler>().PlayQuip(1);
-                
+                secondsToWait = Mathf.Max(secondsToWait, 4);
             }
             else
             {
                 winnerText2.SetActive(true);
                 secondsToWait = audioHandler.GetComponent<AudioHandler>().PlayQuip(2);
+                secondsToWait = Mathf.Max(secondsToWait, 4);
             }
             player1Score = 0;
             player2Score = 0;
         }
+
+        print(secondsToWait);
         StartCoroutine(WaitAndReloadScene(secondsToWait));
     }
 
